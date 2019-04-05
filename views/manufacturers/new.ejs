@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<div class="container ptb-125">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h3 class="login-heading mb-4 text-center">Create manufacturer</h3>
+            <form action="/manufacturers" method="post">
+                <% if (errors.length > 0) { %>
+                <% for(var i = 0; i < errors.length; i++) { %>
+                <div class="alert alert-danger mb-15" role="alert">
+                    <%= errors[i].msg %>
+                </div>
+                <% } %>
+                <% } %>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Name" name="name" <% if (inputs.length > 0) { %>value="<%=inputs[0].name%>"<% } %>required autofocus>
+                    <label for="inputUsername">Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Contact Number" name="contact_number" <% if (inputs.length > 0) { %>value="<%=inputs[0].contact_number%>"<% } %>required autofocus>
+                    <label for="inputUsername">Contact Number</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Contact Person First Name" name="contact_person_first_name" <% if (inputs.length > 0) { %>value="<%=inputs[0].contact_person_first_name%>"<% } %>required autofocus>
+                    <label for="inputUsername">Contact Person First Name</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Contact Person Last Name" name="contact_person_last_name" <% if (inputs.length > 0) { %>value="<%=inputs[0].contact_person_last_name%>"<% } %>required autofocus>
+                    <label for="inputUsername">Contact Person Last Name</label>
+                </div>
+
+
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
